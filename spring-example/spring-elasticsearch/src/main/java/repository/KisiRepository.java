@@ -9,6 +9,6 @@ import org.springframework.data.elasticsearch.annotations.Query;
 @Repository
 
 public interface KisiRepository extends ElasticsearchRepository<Kisi, String> {
-    @Query("\"bool\": {\"must\": [{\"match\": {\"ad\":\"?0\"}}]}}")
+    @Query("{\"bool\": {\"must\": [{\"match\": {\"ad\":\"?0\"}}]}}")
         List<Kisi> getByCustomQuery(String search);
 }
